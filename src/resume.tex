@@ -1,0 +1,237 @@
+%-------------------------
+% Professional Resume
+% Author : Oussama Ouaadich
+% License : GPL v3
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+% only for pdflatex
+% \input{glyphtounicode}
+
+% social and contact identity
+\usepackage{fontawesome5}
+
+% mono-font for technical identity
+\usepackage[scale=0.90,lf]{FiraMono}
+
+% subtle accents for visual depth
+\definecolor{light-grey}{gray}{0.83}
+\definecolor{dark-grey}{gray}{0.3}
+\definecolor{text-grey}{gray}{.08}
+
+\DeclareRobustCommand{\ebseries}{\fontseries{eb}\selectfont}
+\DeclareTextFontCommand{\texteb}{\ebseries}
+
+% defining the signature underline style
+\usepackage{contour}
+\usepackage[normalem]{ulem}
+\renewcommand{\ULdepth}{1.8pt}
+\contourlength{0.8pt}
+\newcommand{\myuline}[1]{%
+  \uline{\phantom{#1}}%
+  \llap{\contour{white}{#1}}%
+}
+
+
+% custom font: helvetica-style
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault}
+%% Only if the base font of the document is to be sans serif
+\usepackage[T1]{fontenc}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\makebox[\textwidth][c]{\small \thepage\ / \pageref{LastPage}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% balancing the page architecture
+\setlength{\footskip}{20pt}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting - serif
+% \titleformat{\section}{
+%   \vspace{2pt} \scshape \raggedright\large % header section
+% }{}{0em}{}[\color{black} \titlerule \vspace{-5pt}]
+
+% high-impact section typography
+\titleformat {\section}{
+    \bfseries \vspace{2pt} \raggedright \large % header section
+}{}{0em}{}[\color{light-grey} {\titlerule[2pt]} \vspace{-4pt}]
+
+% only for pdflatex
+% ensuring accessibility and cross-platform integrity
+\pdfgentounicode=1
+
+%-------------------------
+% custom layout components
+\newcommand{\entry}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\sectionHeader}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & {\color{dark-grey}\small #2}\vspace{1pt}\\ % top row of resume entry
+      \textit{#3} & {\color{dark-grey} \small #4}\\ % second row of resume entry
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\subSectionHeader}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\projectHeader}[2]{
+    \item
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+      #1 & {\color{dark-grey}\small #2} \\
+    \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\subEntry}[1]{\entry{#1}\vspace{-4pt}}
+\newcommand{\field}[2]{\textbf{#1} {: #2}\vspace{2pt} \\}
+\newcommand{\sectionNote}[1]{{\color{dark-grey}\small\textit{#1}}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% CHANGED default leftmargin  0.15 in
+\newcommand{\sectionListStart}{\begin{itemize}[leftmargin=0in, label={}]}
+\newcommand{\sectionListEnd}{\end{itemize}}
+\newcommand{\itemListStart}{\begin{itemize}}
+\newcommand{\itemListEnd}{\end{itemize}\vspace{0pt}}
+
+\color{text-grey}
+
+%-------------------------------------------
+%%%%%%  RESUME  %%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\Huge Oussama Ouaadich} \\ \vspace{5pt}
+  \small \faPhone* \href{tel:+212633857038}{\texttt{+212 633 857 038}} \hspace{1pt} $|$
+  \hspace{1pt} \faEnvelope \hspace{2pt} \href{mailto:oussama.odx@gmail.com}{\texttt{oussama.odx@gmail.com}} \\[3pt]
+  \small \href{https://linkedin.com/in/itsmeodx}{\faLinkedin \hspace{2pt} \texttt{linkedin.com/in/itsmeodx}} \hspace{1pt} $|$
+  \hspace{1pt} \href{https://github.com/itsmeodx}{\faGithub \hspace{2pt} \texttt{github.com/itsmeodx}}
+  \\ \vspace{-3pt}
+\end{center}
+
+%-----------PROFILE-----------
+\section{ABOUT ME}
+\begin{itemize}[leftmargin=0in, label={}]
+  \small{\item{
+        I build things from scratch because I need to understand how they work --- from C and systems programming to full-stack web platforms. I write clean code, take ownership, and I'm looking for a team where I can actually contribute.
+        }}
+\end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+\sectionListStart
+\sectionHeader
+{1337 Coding School (42 Network)}{Ben Guerir, UM6P}
+{Software Engineering Student (Level 11.60)}{Oct. 2023 -- Present}
+\itemListStart
+\entry{Mastered C/C++ and Unix systems engineering through a rigorous peer-reviewed curriculum; sustained a \textbf{perfect validation record with all bonuses} across every project, from low-level algorithms to system architecture.}
+\entry{Refined technical leadership and collaborative skills through constant peer-to-peer code reviews and collective problem-solving to meet the highest engineering standards.}
+\itemListEnd
+\sectionNote{Note: project repositories are kept private per 42 Network academic integrity policy.}
+\sectionListEnd
+
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+\sectionListStart
+\projectHeader
+{\textbf{ASTrace-AI} $|$ \textit{Python, libclang, AI-Agent Optimization}}{\href{https://github.com/itsmeodx/astrace-ai}{\faGithub} $|$ March 2026}
+\itemListStart
+\entry{An educational PoC that solves the "token bloat" problem in AI coding tools by surgically pre-filtering source files, \textbf{cutting API costs by 95\%} and improving reasoning accuracy.}
+\entry{Used \textbf{libclang} to surgically filter high-risk memory logic into compact, focused slices (typically \textasciitilde 30 lines) before passing them to the AI, rather than dumping entire files.}
+\entry{This project proved that \textbf{deterministic pre-filtering} is the key to building cost-efficient AI agents that can handle massive legacy systems without getting "confused" by background noise.}
+\itemListEnd
+
+\projectHeader
+{\textbf{Azm Task Manager} $|$ \textit{React 19, NestJS, Docker, WebSockets}}{March 2026}
+\itemListStart
+\entry{Served as \textbf{Technical Lead}, personally delivering nearly the entire frontend and taking full \textbf{DevOps ownership} of the multi-container orchestration.}
+\entry{Engineered a real-time \textbf{scoped chat engine} featuring file sharing, typing indicators, online status, and a schema-backed friendship/blocking system.}
+\entry{Drove the platform to \textbf{production stability} by refactoring and optimizing core backend services, delivering a fully functional, peer-reviewed product under a compressed deadline.}
+\itemListEnd
+
+\projectHeader
+{\textbf{webserv} $|$ \textit{C++, HTTP/1.1, Web Architecture}}{Nov 2025}
+\itemListStart
+\entry{Built a production-grade HTTP/1.1 web server in C++ with an \textbf{Nginx-style configuration parser} supporting dynamic routing, virtual hosts, and multiple simultaneous users.}
+\entry{Implemented a \textbf{poll()-based event loop} for concurrent connection handling, CGI execution via forked processes, keep-alive, and directory listing --- no threads.}
+\entry{\textbf{Full HTTP/1.1 compliance (RFC 7230/7231)} with GET, POST, and DELETE support, MIME-type detection, and tested against real browsers.}
+\itemListEnd
+
+% \newpage
+\projectHeader
+{\textbf{Inception} $|$ \textit{Docker, Infrastructure, System Security}}{June 2025}
+\itemListStart
+\entry{Orchestrated \textbf{8 containerized services} --- Nginx, WordPress, MariaDB, Redis, Adminer, FTP, Portainer, and a static site --- using \textbf{custom Alpine-based images} built from scratch inside a VM.}
+\entry{Configured \textbf{persistent volumes}, inter-service networking, and HTTPS-only exposure, with all services restarting automatically on failure.}
+\entry{Enforced strict process isolation and a \textbf{read-only filesystem} across all containers, building security and stability into the infrastructure from the ground up --- not as an afterthought.}
+\itemListEnd
+
+\projectHeader
+{\textbf{miniRT} $|$ \textit{C, Computer Graphics, Multithreading}}{March 2025}
+\itemListStart
+\entry{Built a \textbf{multithreaded ray tracer} in C supporting spheres, planes, cones, and cylinders --- \textbf{pthreads-based rendering pipeline} for real-time performance.}
+\entry{Taking that extra initiative meant solving \textbf{complex math and performance challenges} to deliver a tool that feels fast, interactive, and technically superior.}
+\entry{Built a \textbf{live scene viewer} with mouse and keyboard controls to navigate, remove objects, and modify attributes like surface patterns and transparency on-the-fly --- all beyond the base requirements.}
+\itemListEnd
+
+\projectHeader
+{\textbf{minishell} $|$ \textit{C, System Programming, Recursive Descent Parsing}}{Sept 2024}
+\itemListStart
+\entry{Split responsibilities with a teammate: my partner owned the recursive descent parser and AST; I owned the \textbf{execution engine}, handling pipes, redirections, and complex command trees correctly.}
+\entry{I personally took on the "pro" features: adding \textbf{aliases}, a \textbf{custom shell configuration system} (similar to .bashrc), and a \textbf{permanent command history} that stays with you.}
+\entry{Built a \textbf{responsive 2-line prompt} that adapts to terminal width, displaying the user info, working directory, Git branch, current time, and exit code.}
+\itemListEnd
+\sectionListEnd
+
+
+%-----------SKILLS-----------
+\section{SKILLS}
+\begin{itemize}[leftmargin=0in, label={}]
+  \small{\item{
+        \field{Languages}{C/C++, Javascript/Typescript, HTML/CSS, Python}
+        \field{Frontend}{React, Vite, Tailwind CSS, TanStack Query}
+        \field{Backend}{NestJS, Prisma (PostgreSQL), RESTful APIs}
+        \field{Real-time}{Event-Driven Architecture, Socket.io}
+        \field{Security}{JWT/OAuth, Web Security (OWASP, Helmet, Throttler, Bcrypt)}
+        \field{Tools \& Infrastructure}{Git/GitHub, Docker (Orchestration), Nginx, Linux, Postman, Husky}
+        \field{Spoken Languages}{Arabic (Native), English (Fluent), French (Intermediate)}
+        }}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}
