@@ -1,6 +1,11 @@
-*.aux
+# GNU/Linux build artifacts
 *.log
-*.fdb_latexmk
-*.fls
+*.aux
 *.out
 *.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# Clean output management
+out/*
+!out/*.pdf
